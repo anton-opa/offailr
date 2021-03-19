@@ -5,7 +5,7 @@ int main ()
     float x;
     printf ("Enter x->") ;
     scanf ("%f", &x);
-    if (x>=acos(-1) && x<=acos(1))
+    if (x>=asin(cos(sqrt(acos(-1)/2.))/2.) && x<=acos(-1)/6.)
     {
         double y=acos(2*sin(x));
         double z=sqrt(cos(y*y));
