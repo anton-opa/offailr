@@ -2,10 +2,9 @@
 #include <math.h>
 main()
 {
-const  float ep=0.0000001;
-
-float h,x,f,sum=0;
-scanf("%f",&h);
+float h, x, f, ep,sum=0;
+scanf("%f", &h);
+scanf("%f", &ep);
 printf("%-s\t", "x");
 printf("%s\n", "f(x)");
 printf("%s\n","-------------------------");
