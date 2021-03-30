@@ -10,9 +10,9 @@ printf("%s\n", "f(x)");
 printf("%s\n","-------------------------");
 if (h<0.0f)
 	return 0;
-for (x=0;x<=1./2+ep;x+=h)
+for (x=0;(x-0.5)<=h;x+=h)
 {
-	if (x<=1./4+ep){
+	if ((x-0.25)<=h){
 		printf("%-8.5f\t",x);
 		f=exp(sin(x));
 		printf("%8.5f\n",f);
