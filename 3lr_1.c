@@ -2,8 +2,6 @@
 #include <math.h>
 int main()
 {
-const  float ep=0.0000001;
-
 float h,f,x=0;
 scanf("%f",&h);
 printf("%-s\t", "x");
@@ -13,7 +11,7 @@ if (h<0.0f)
 	return 0;
 do
 {
-	if(x<=0.25+ep)
+	if((x-0.25)<=h)
 	{
 		printf("%-8.4f\t",x);
 		f=exp(sin(x));
@@ -27,5 +25,5 @@ do
 	printf("%8.4f\n",f);
 	x+=h;
 	}
-}while(x>=0 && x<=1./2+ep);
+}while(x>=0 && (x-0.5)<=h);
 }
