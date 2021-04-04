@@ -1,30 +1,27 @@
 #include <stdio.h>
 #include <math.h>
-main()
+int main()
 {
-float h, x, f, ep,sum=0;
-scanf("%f", &h);
-scanf("%f", &ep);
-printf("%-s\t", "x");
-printf("%s\n", "f(x)");
-printf("%s\n","-------------------------");
-if (h<0.0f)
-	return 0;
-for (x=0;(x-0.5)<=h;x+=h)
-{
-	if ((x-0.25)<=h){
-		printf("%-8.5f\t",x);
-		f=exp(sin(x));
-		printf("%8.5f\n",f);
-		sum+=exp(sin(x+h/2.));
-	}
-	else
-	{
-		printf("%-8.5f\t",x);
-		f=(exp(x))-(1/(sqrt(x)));
-		printf("%8.5f\n",f);
-		sum+=(exp(x+h/2.))-(1/(sqrt(x+h/2.)));
-	}
-}
-printf("%f",h*sum);
+		float h, f, i = 0, x = 0;
+		scanf("%f", &h);
+		printf("%-s\t", "x");
+		printf("%s\n", "f(x)");
+		printf("%s\n","-------------------------");
+		if ( h< 0.0f )
+		        return 0;
+		for (x ; x <= 0.5 )
+		{       
+
+				if (x <= 0.25)
+				{
+						f = exp(sin(x));
+				}
+				else
+				{
+						f = exp(x) - (1 / (sqrt(x)));
+				}
+				printf("%-8.4f\t%8.4f\n", x, f);
+		        	i += 1;
+		        	x = 0 + i * h;
+		}
 }
