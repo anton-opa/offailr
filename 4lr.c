@@ -1,28 +1,36 @@
 #include <stdio.h>
 #include <math.h>
+
+float intgrl( int n)
+{
+		float f = 0, x, a = 0, b = 0.5, h ;
+		h = (b - a) / n;
+		for (int i = 0; i < n; i++)
+		{
+				x = i * h + h / 2.0;
+				if ( x <= 0.25)
+				{
+						f += exp(sin(x));
+				}
+				else
+				{
+						f += exp(x) - 1 / sqrt(x);
+				}
+		}
+				return f*h;
+}
+
 int main()
 {
-		float h, f, e, i = 0, x = 0, s1, s2, r;
-		scanf("%f", &h);
+		float n1, n2, e ;
+		int n = 2;
 		scanf("%f", &e);
-		printf("%-s\t", "x");
-		printf("%s\n", "f(x)");
-		printf("%s\n", "------------------------");
+		n1 = intgrl(n);
 		do
 		{
-			n=2n;
-			do
-			{
-					if (x <= 0.25)
-					{
-							f = exp(sin(x));
-					}
-					else
-					{
-							f = exp(x) - (1 / (sqrt(x)));
-					}
-					printf("%-8.4f\t%8.4f\n", x, f);
-					i += 1;
-					x = 0 + i * h;
-			} while (x >= 0 && x <= 0.5);
-		}while(r<e)
+				n1 = n2;
+				n = n * 2.0;
+				n2 = intgrl(n);
+		} while(fabs(n2 - n1) / 3.0 >= e);
+		printf("Integral Runge = %.5f\n", n2);
+}
