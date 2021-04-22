@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <math.h>
 
-float intgrl( int n)
+double intgrl( int n)
 {
-		float f = 0, x, a = 0, b = 0.5, h ;
+		double f = 0, x, a = 0, b = 0.5, h ;
 		h = (b - a) / n;
 		for (int i = 0; i < n; i++)
 		{
@@ -22,15 +22,16 @@ float intgrl( int n)
 
 int main()
 {
-		float n1, n2, e ;
+		double n1, n2, e ;
 		int n = 2;
-		scanf("%f", &e);
+		scanf("%lf", &e);
 		n1 = intgrl(n);
 		do
 		{
 				n1 = n2;
-				n = n * 2.0;
+				n = n * 2;
 				n2 = intgrl(n);
+				printf("n = %d\t 2n = %.5lf\t DELTA = %lf\n",n , n2, fabs(n2 - n1) / 3.0);
 		} while(fabs(n2 - n1) / 3.0 >= e);
-		printf("Integral Runge = %.5f\n", n2);
+		printf("Integral Runge = %.5lf\n", n2);
 }
