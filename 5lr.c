@@ -1,5 +1,5 @@
 #include <stdio.h>
-int w10 ( int n )
+void w10 ( int n )
 {
     int x;
     while (n > 0)
@@ -9,7 +9,7 @@ int w10 ( int n )
         printf("%u\t", x);
     }
 }
-int r10(int n)
+void r10(int n)
 {
     int x;
     if (n>0)
