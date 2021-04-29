@@ -12,12 +12,10 @@ void fill(int l, int a[], int n[], int p[])
     {
         if (a[i] > 0)
         {
-            p[z] = a[i];
             z++;
         }
         if (a[i] < 0)
         {
-            n[x] = a[i];
             x++;
         }
     }
@@ -32,12 +30,14 @@ int main()
     int P[z];
     int N[x];
     fill(n, A, P, N);
+    printf("%d\n", z);
+    printf("%d\n", x);
     for (int i = 0; i < n; i++)
     {
         printf("%4d", A[i]);
     }
     printf("\n");
-    for (int i = 0; i < z; i++)
+  /*  for (int i = 0; i < z; i++)
     {
         printf("%4d", P[i]);
     }
@@ -46,5 +46,5 @@ int main()
     {
         printf("%4d", N[i]);
     }
-    printf("\n");
+    printf("\n");*/
 }
