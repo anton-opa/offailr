@@ -2,21 +2,18 @@
 #include <stdlib.h>
 #include <time.h>
 int z = 0, x = 0;
-void fill(int l, int a[], int n[], int p[])
+void fill(int l, int a[], int *n, int *p)
 {
     for (int i = 0; i < l; i++)
     {
         a[i] = rand() % 101 - 50;
-    }
-    for (int i = 0; i < l; i++)
-    {
         if (a[i] > 0)
         {
-            z++;
+            p[z++] = a[i];
         }
         if (a[i] < 0)
         {
-            x++;
+            n[x++] = a[i];
         }
     }
 }
@@ -37,7 +34,7 @@ int main()
         printf("%4d", A[i]);
     }
     printf("\n");
-  /*  for (int i = 0; i < z; i++)
+    for (int i = 0; i < z; i++)
     {
         printf("%4d", P[i]);
     }
@@ -46,5 +43,5 @@ int main()
     {
         printf("%4d", N[i]);
     }
-    printf("\n");*/
+    printf("\n");
 }
